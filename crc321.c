@@ -88,7 +88,7 @@ int main(int argc, char** argv)
 	CRC32_init();
 	crc = calc_crc32_stream(is);
 	printf("%08x\n", (crc ^ 0xffffffffU));
-	
+
 	return 0;
 	}
 /*// int main(int argc, char** argv) //*/
