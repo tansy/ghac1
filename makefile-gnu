@@ -1,0 +1,22 @@
+# crc321 Makefile
+# $ make -f makefile-gnu
+
+CC       = gcc
+CFLAGS   = -O2 $(WARNINGS)
+
+SRCS     = crc321.c
+OBJS     = $(SRCS:.c=.o)
+
+.c.o:
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+TARGET  = crc321
+
+all      : $(TARGET)
+
+$(TARGET) : $(OBJS)
+	$(CC) -o $@ $+ $(LIBS)
+
+clean :
+	rm -rf *.o $(TARGET) core *~
+
